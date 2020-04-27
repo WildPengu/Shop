@@ -1,0 +1,15 @@
+.black-button {
+  padding: 10px;
+  text-transform: uppercase;
+  transition: ease-in-out 0.4s;
+  font-weight: bold;
+}
+
+.black-button-link {
+  color: black;
+}
+
+.black-button:hover {
+  background-color: rgb(46, 46, 46);
+  transition: ease-in-out 0.4s;
+}

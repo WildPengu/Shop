@@ -1,0 +1,53 @@
+.header-container {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+
+.menu ul li {
+  padding: 35px 30px 45px;
+  font-size: 18px;
+  transition-duration: 0.4s;
+}
+
+.menu ul li span {
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.menu ul li span:hover {
+  transition: ease-in-out 0.4s;
+  border-bottom: 2px solid white;
+}
+
+.header-bar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.shopping {
+  padding: 0 40px 0 25px;
+}
+
+.shopping.cart.icon {
+  font-size: 20px;
+}
+
+.user.icon {
+  font-size: 20px;
+}
+
+.header-bar-right span .icon:hover {
+  cursor: pointer;
+  color: rgb(163, 163, 163);
+}

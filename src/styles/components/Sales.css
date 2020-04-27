@@ -1,0 +1,46 @@
+.sales-container {
+  height: 65vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sales-describe {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 8%;
+}
+
+.sales-topic {
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.sales-topic span {
+  line-height: normal;
+}
+
+.sales-topic span {
+  padding: 15px 0;
+}
+
+.sales-button-container {
+  margin-top: 20px;
+}
+
+.sales-button-container a:nth-child(2) {
+  margin-left: 20px;
+}
+
+.code-container {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.code-container span {
+  font-weight: bold;
+  font-size: 20px;
+}

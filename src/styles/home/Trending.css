@@ -1,0 +1,46 @@
+.trending-pictures-container {
+  height: 90vh;
+  display: flex;
+  padding: 20px;
+}
+
+.trending-picture {
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left-picture {
+  background-image: url("https://images.puma.com/image/upload/q_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOP%7ETrending-now_480x266%7EEEA-20SS_ECOM_Global_RT_PUMATRAC_Trending_Inline_TabMob_1536x1536_7.jpg/fmt/jpg");
+}
+
+.right-picture {
+  background-image: url("https://images.puma.com/image/upload/q_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOP%7ETrending-now_480x266%7EEEA-20SS_ECOM_Global_RT_PUMATRAC_FullBleedHero_TabMob_1.jpg/fmt/jpg");
+}
+
+.picture-describe-container {
+  display: flex;
+}
+
+.picture-describe {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.picture-describe > div {
+  margin: 30px 0;
+}
+
+.picture-describe h2 {
+  text-transform: uppercase;
+}
+
+.picture-describe span {
+  font-weight: bold;
+}
