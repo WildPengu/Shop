@@ -1,0 +1,4 @@
+.price-range-limits {
+  display: flex;
+  justify-content: space-between;
+}

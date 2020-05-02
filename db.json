@@ -1,0 +1,81 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Męskie buty treningowe PUMA x FIRST MILE LQDCELL Hydra Camo",
+      "price": 439,
+      "varieties": [
+        {
+          "color": ["green", "black"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_260,h_260/global/193085/01/sv01/fnd/EEA/fmt/png/Mskie-buty-treningowe-PUMA-x-FIRST-MILE-LQDCELL-Hydra-Camo"
+        },
+        {
+          "color": ["gray", "white"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/193085/02/sv01/fnd/EEA/fmt/png/Mskie-buty-treningowe-PUMA-x-FIRST-MILE-LQDCELL-Hydra-Camo"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Skórzane buty sportowe Smash",
+      "price": 149,
+      "varieties": [
+        {
+          "color": ["green", "black"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/356722/11/sv01/fnd/EEA/fmt/png/Skrzane-buty-sportowe-Smash"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Buty sportowe Bari",
+      "price": 164,
+      "varieties": [
+        {
+          "color": ["blue"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/369116/03/sv01/fnd/EEA/fmt/png/Buty-sportowe-Bari"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Tenisówki Ralph Sampson Low OG",
+      "price": 209,
+      "varieties": [
+        {
+          "color": ["white"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/370719/01/sv01/fnd/EEA/fmt/png/Teniswki-Ralph-Sampson-Low-OG"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Męskie buty piłkarskie 365 Sala 1",
+      "price": 239,
+      "varieties": [
+        {
+          "color": ["white", "black"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/105989/01/sv01/fnd/EEA/fmt/png/Mskie-buty-pikarskie-365-Sala-1"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Męskie buty piłkarskie PUMA ONE 20.4 IT",
+      "price": 229,
+      "varieties": [
+        {
+          "color": ["yellow", "black"],
+          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/105834/01/sv01/fnd/EEA/fmt/png/Mskie-buty-pikarskie-PUMA-ONE-20.4-IT"
+        }
+      ]
+    }
+  ]
+}

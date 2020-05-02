@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/home/Menu.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Menu = () => {
   return (
@@ -7,22 +8,34 @@ const Menu = () => {
       <nav className="menu">
         <ul>
           <li>
-            <span>Home</span>
+            <span>
+              <Link to="/">Home </Link>
+            </span>
           </li>
           <li>
-            <span>Kobiety</span>
+            <span>
+              <Link to="/kobiety">Kobiety </Link>
+            </span>
           </li>
           <li>
-            <span>Mężczyźni</span>
+            <span>
+              <Link to="/mezczyzni">Mężczyźni </Link>
+            </span>
           </li>
           <li>
-            <span>Dziecięce</span>
+            <span>
+              <Link to="/dzieciece">Dzięcięce </Link>
+            </span>
           </li>
           <li>
-            <span>Select</span>
+            <span>
+              <Link to="/select">Select </Link>
+            </span>
           </li>
           <li>
-            <span>Kolekcje</span>
+            <span>
+              <Link to="/kolekcje">Kolekcje </Link>
+            </span>
           </li>
         </ul>
       </nav>

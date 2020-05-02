@@ -1,0 +1,12 @@
+.product-type {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-type:hover {
+  cursor: pointer;
+  color: red;
+}

@@ -1,0 +1,28 @@
+.filters-in-header-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.filters-in-header-container span {
+  text-transform: uppercase;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-header {
+  border: 1px solid black;
+  padding: 3px;
+  font-size: 12px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.filter-header:hover {
+  color: white;
+  background-color: black;
+}
+
+.line-under-header {
+  margin: 20px 0 50px 0;
+}
