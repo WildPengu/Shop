@@ -6,18 +6,41 @@ import ShopProductsHeader from "./ShopProductsHeader";
 import Product from "./components/Product";
 import "../../styles/shop/Shop.css";
 
+const useForceUpdate = () => useState()[1];
+
 const Shop = () => {
+  const forceUpdate = useForceUpdate();
+
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:3000/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
-  });
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
 
-  const [products, setProducts] = useState(0);
+  const sort = () => {
+    let newProducts = products;
+    for (let i = 1; i < newProducts.length; i++) {
+      for (let j = 1; j < newProducts.length; j++) {
+        if (newProducts[j - 1].price < newProducts[j].price) {
+          const temp = newProducts[j - 1];
+          newProducts[j - 1] = newProducts[j];
+          newProducts[j] = temp;
+        }
+      }
+    }
+
+    setProducts(newProducts);
+    renderProducts();
+  };
 
   let productsToRender = null;
 
-  if (products.length > 0) {
+  const renderProducts = () => {
+    console.log(productsToRender);
     productsToRender = products.map((product) => (
       <Product
         key={product.id}
@@ -26,6 +49,10 @@ const Shop = () => {
         varieties={product.varieties}
       />
     ));
+  };
+
+  if (products.length > 0) {
+    renderProducts();
   }
 
   return (
@@ -37,10 +64,11 @@ const Shop = () => {
           <ActiveFilters />
         </div>
         <div className="shop-right-side">
-          <ShopProductsHeader />
+          <ShopProductsHeader sort={sort} />
           <div className="shop-products-container">{productsToRender}</div>
         </div>
       </div>
+      <button onClick={forceUpdate}>Click To Render</button>
     </div>
   );
 };

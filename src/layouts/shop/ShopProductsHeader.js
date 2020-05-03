@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/shop/ShopProductsHeader.css";
 
-const ShopProductsHeader = () => {
+const ShopProductsHeader = (props) => {
   return (
     <div>
       <h2 className="section-header">
@@ -12,7 +12,9 @@ const ShopProductsHeader = () => {
         <div className="filter-header">Top Sellers</div>
         <div className="filter-header">New Arrivals</div>
         <div className="filter-header">Price Low To High</div>
-        <div className="filter-header">Price High To Low</div>
+        <div className="filter-header" onClick={props.sort}>
+          Price High To Low
+        </div>
       </div>
       <hr className="line-under-header" />
     </div>
