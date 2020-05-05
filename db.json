@@ -12,7 +12,7 @@
         },
         {
           "color": ["gray", "white"],
-          "sizes": [39, 40, 41, 42, 43, 44, 45, 46],
+          "sizes": [38.5, 40, 41, 42, 43, 44, 45, 46],
           "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/193085/02/sv01/fnd/EEA/fmt/png/Mskie-buty-treningowe-PUMA-x-FIRST-MILE-LQDCELL-Hydra-Camo"
         }
       ]
@@ -72,7 +72,7 @@
       "varieties": [
         {
           "color": ["yellow", "black"],
-          "sizes": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+          "sizes": [36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
           "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/105834/01/sv01/fnd/EEA/fmt/png/Mskie-buty-pikarskie-PUMA-ONE-20.4-IT"
         }
       ]

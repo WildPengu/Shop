@@ -4,7 +4,7 @@ import CostSlider from "./CostSlider";
 import ProductColor from "./ProductColor";
 import "../../styles/shop/ActiveFilters.css";
 
-const ActiveFilters = () => {
+const ActiveFilters = (props) => {
   return (
     <div className="active-filters">
       <span className="filter-by">filtruj wg</span>
@@ -21,7 +21,9 @@ const ActiveFilters = () => {
       />
       <CostSlider />
       <FilterBy
+        setActiveFilter={props.setActiveFilter}
         header={"Rozmiar"}
+        filterType="Size"
         priceWidth={"50px"}
         items={[
           "35.5",

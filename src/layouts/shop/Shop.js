@@ -12,6 +12,10 @@ const Shop = () => {
   const forceUpdate = useForceUpdate();
 
   const [products, setProducts] = useState([]);
+  const [filteredPoducts, setfilteredPoducts] = useState([]);
+  const [actualSearchedSize, setActualSearchedSize] = useState();
+
+  const [filters, setFilters] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
@@ -21,27 +25,40 @@ const Shop = () => {
       });
   }, []);
 
-  const sort = () => {
-    let newProducts = products;
-    for (let i = 1; i < newProducts.length; i++) {
-      for (let j = 1; j < newProducts.length; j++) {
-        if (newProducts[j - 1].price < newProducts[j].price) {
-          const temp = newProducts[j - 1];
-          newProducts[j - 1] = newProducts[j];
-          newProducts[j] = temp;
-        }
-      }
-    }
+  // const sortByPrice = (sign) => {
+  //   let newProducts = products;
+  //   for (let i = 0; i < newProducts.length; i++) {
+  //     for (let j = 1; j < newProducts.length; j++) {
+  //       if (eval(newProducts[j - 1].price + sign + newProducts[j].price)) {
+  //         const temp = newProducts[j];
+  //         newProducts[j] = newProducts[j - 1];
+  //         newProducts[j - 1] = temp;
+  //       }
+  //     }
+  //   }
 
-    setProducts(newProducts);
-    renderProducts();
+  //   setfilteredPoducts(newProducts);
+  //   renderProducts();
+  // };
+
+  const filter = (list) => {
+    _.filters;
+    // let newProducts = [];
+    // for (let i = 0; i < products.length; i++) {
+    //   for (let j = 0; j < products[i].varieties.length; j++) {
+    //     for (let k = 0; k < products[i].varieties[j].sizes.length; k++) {
+    //       if (products[i].varieties[j].sizes[k] === parseFloat(value)) {
+    //         console.log(products[i]);
+    //         newProducts.push(products[i]);
+    //       }
+    //     }
+    //   }
+    // }
+    // setfilteredPoducts(newProducts);
   };
 
-  let productsToRender = null;
-
   const renderProducts = () => {
-    console.log(productsToRender);
-    productsToRender = products.map((product) => (
+    return filter(filteredPoducts).map((product) => (
       <Product
         key={product.id}
         name={product.name}
@@ -51,9 +68,13 @@ const Shop = () => {
     ));
   };
 
-  if (products.length > 0) {
-    renderProducts();
-  }
+  const setActiveFilter = (type) => {
+    setFilters({ ...filters, type: true });
+    size: {
+      filter: () => {},
+      activeSize: 
+    }
+  };
 
   return (
     <div>
@@ -61,11 +82,11 @@ const Shop = () => {
       <div className="shop-container">
         <div className="shop-left-side">
           <Filter />
-          <ActiveFilters />
+          <ActiveFilters setActiveFilter={setActiveFilter} />
         </div>
         <div className="shop-right-side">
-          <ShopProductsHeader sort={sort} />
-          <div className="shop-products-container">{productsToRender}</div>
+          {/* <ShopProductsHeader sortByPrice={sortByPrice} /> */}
+          <div className="shop-products-container">{renderProducts()}</div>
         </div>
       </div>
       <button onClick={forceUpdate}>Click To Render</button>

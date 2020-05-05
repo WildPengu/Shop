@@ -11,8 +11,10 @@ const ShopProductsHeader = (props) => {
         <span>Sortuj</span>
         <div className="filter-header">Top Sellers</div>
         <div className="filter-header">New Arrivals</div>
-        <div className="filter-header">Price Low To High</div>
-        <div className="filter-header" onClick={props.sort}>
+        <div className="filter-header" onClick={() => props.sortByPrice(">")}>
+          Price Low To High
+        </div>
+        <div className="filter-header" onClick={() => props.sortByPrice("<")}>
           Price High To Low
         </div>
       </div>
