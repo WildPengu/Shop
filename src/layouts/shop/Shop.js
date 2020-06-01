@@ -12,10 +12,6 @@ const Shop = () => {
   const forceUpdate = useForceUpdate();
 
   const [products, setProducts] = useState([]);
-  const [filteredPoducts, setfilteredPoducts] = useState([]);
-  const [actualSearchedSize, setActualSearchedSize] = useState();
-
-  const [filters, setFilters] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
@@ -25,40 +21,36 @@ const Shop = () => {
       });
   }, []);
 
-  // const sortByPrice = (sign) => {
-  //   let newProducts = products;
-  //   for (let i = 0; i < newProducts.length; i++) {
-  //     for (let j = 1; j < newProducts.length; j++) {
-  //       if (eval(newProducts[j - 1].price + sign + newProducts[j].price)) {
-  //         const temp = newProducts[j];
-  //         newProducts[j] = newProducts[j - 1];
-  //         newProducts[j - 1] = temp;
-  //       }
-  //     }
-  //   }
-
-  //   setfilteredPoducts(newProducts);
-  //   renderProducts();
-  // };
-
-  const filter = (list) => {
-    _.filters;
-    // let newProducts = [];
-    // for (let i = 0; i < products.length; i++) {
-    //   for (let j = 0; j < products[i].varieties.length; j++) {
-    //     for (let k = 0; k < products[i].varieties[j].sizes.length; k++) {
-    //       if (products[i].varieties[j].sizes[k] === parseFloat(value)) {
-    //         console.log(products[i]);
-    //         newProducts.push(products[i]);
-    //       }
-    //     }
-    //   }
-    // }
-    // setfilteredPoducts(newProducts);
+  const ascending = (newProducts, j) => {
+    if (newProducts[j - 1].price < newProducts[j].price) {
+      const temp = newProducts[j - 1];
+      newProducts[j - 1] = newProducts[j];
+      newProducts[j] = temp;
+    }
   };
 
+  const descending = (newProducts, j) => {
+    if (newProducts[j - 1].price > newProducts[j].price) {
+      const temp = newProducts[j - 1];
+      newProducts[j - 1] = newProducts[j];
+      newProducts[j] = temp;
+    }
+  };
+
+  const sort = (comp) => {
+    let newProducts = products;
+    for (let i = 1; i < newProducts.length; i++) {
+      for (let j = 1; j < newProducts.length; j++) {
+        comp(newProducts, j);
+      }
+    }
+    setProducts(newProducts);
+  };
+
+  let productsToRender = null;
+
   const renderProducts = () => {
-    return filter(filteredPoducts).map((product) => (
+    productsToRender = products.map((product) => (
       <Product
         key={product.id}
         name={product.name}
@@ -68,13 +60,9 @@ const Shop = () => {
     ));
   };
 
-  const setActiveFilter = (type) => {
-    setFilters({ ...filters, type: true });
-    size: {
-      filter: () => {},
-      activeSize: 
-    }
-  };
+  if (products.length > 0) {
+    renderProducts();
+  }
 
   return (
     <div>
@@ -82,11 +70,15 @@ const Shop = () => {
       <div className="shop-container">
         <div className="shop-left-side">
           <Filter />
-          <ActiveFilters setActiveFilter={setActiveFilter} />
+          <ActiveFilters />
         </div>
         <div className="shop-right-side">
-          {/* <ShopProductsHeader sortByPrice={sortByPrice} /> */}
-          <div className="shop-products-container">{renderProducts()}</div>
+          <ShopProductsHeader
+            sort={sort}
+            ascending={ascending}
+            descending={descending}
+          />
+          <div className="shop-products-container">{productsToRender}</div>
         </div>
       </div>
       <button onClick={forceUpdate}>Click To Render</button>

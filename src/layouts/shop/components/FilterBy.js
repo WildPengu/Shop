@@ -1,19 +1,8 @@
 import React from "react";
 
-const FilterBy = ({
-  items,
-  setActiveFilter,
-  priceWidth,
-  header,
-  filterType,
-}) => {
-  const listItems = items.map((item, i) => (
-    <span
-      key={i}
-      onClick={() => setActiveFilter(filterType)}
-      className="category-item"
-      style={{ width: priceWidth }}
-    >
+const FilterBy = (props) => {
+  const listItems = props.items.map((item, i) => (
+    <span key={i} className="category-item" style={{ width: props.priceWidth }}>
       {item}
     </span>
   ));
@@ -21,7 +10,7 @@ const FilterBy = ({
   return (
     <div>
       <span className="category-header">
-        <span>{header}</span>
+        <span>{props.header}</span>
         <span>-</span>
       </span>
       <div className="category-items-container">{listItems}</div>
