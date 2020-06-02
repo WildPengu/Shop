@@ -6,11 +6,7 @@ import ShopProductsHeader from "./ShopProductsHeader";
 import Product from "./components/Product";
 import "../../styles/shop/Shop.css";
 
-const useForceUpdate = () => useState()[1];
-
 const Shop = () => {
-  const forceUpdate = useForceUpdate();
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -22,14 +18,6 @@ const Shop = () => {
   }, []);
 
   const ascending = (newProducts, j) => {
-    if (newProducts[j - 1].price < newProducts[j].price) {
-      const temp = newProducts[j - 1];
-      newProducts[j - 1] = newProducts[j];
-      newProducts[j] = temp;
-    }
-  };
-
-  const descending = (newProducts, j) => {
     if (newProducts[j - 1].price > newProducts[j].price) {
       const temp = newProducts[j - 1];
       newProducts[j - 1] = newProducts[j];
@@ -37,8 +25,17 @@ const Shop = () => {
     }
   };
 
+  const descending = (newProducts, j) => {
+    if (newProducts[j - 1].price < newProducts[j].price) {
+      const temp = newProducts[j - 1];
+      newProducts[j - 1] = newProducts[j];
+      newProducts[j] = temp;
+    }
+  };
+
   const sort = (comp) => {
-    let newProducts = products;
+    let newProducts = [];
+    newProducts = newProducts.concat(products);
     for (let i = 1; i < newProducts.length; i++) {
       for (let j = 1; j < newProducts.length; j++) {
         comp(newProducts, j);
@@ -81,7 +78,6 @@ const Shop = () => {
           <div className="shop-products-container">{productsToRender}</div>
         </div>
       </div>
-      <button onClick={forceUpdate}>Click To Render</button>
     </div>
   );
 };
